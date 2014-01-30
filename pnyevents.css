@@ -1,0 +1,12 @@
+/* CSS declarations go here */
+body{
+  background: #F2DAFF;
+}
+
+#college{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -320px;
+  margin-top: -290px;
+}
