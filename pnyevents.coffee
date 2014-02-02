@@ -24,6 +24,7 @@ if Meteor.isClient
 
     $('#fbphotos').isotope
       layoutMode : 'masonry'
+    console.log (Session.get 'facebook'), 'hello'
 
     if Session.get 'facebook'
       console.log "jquery!"
@@ -52,15 +53,3 @@ if Meteor.isClient
     
     # template data, if any, is available in 'this'
     console.log "You pressed the button"  if typeof console isnt "undefined"
-
-if Meteor.isServer
-  Meteor.startup ->
-    Meteor.methods
-      getfbphotos: ->
-        @unblock()
-        yo = HTTP.call "GET", "http://graph.facebook.com/316854181751282/photos"
-        #console.log yo, 'yooo'
-        yo
-
-
-# code to run on server at startup
