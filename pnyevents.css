@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700italic,800italic,400,800,700);
+
 #overlay{
   background: #000;
   height: 100%;
@@ -9,6 +12,21 @@
   opacity: 1;
 }
 
+*{
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 800 !important;
+  font-style: italic !important;
+}
+
+header, #content, body{
+  //background: #000 !important;
+  background: url(noisy_net.png) !important;
+}
+
 .box{
-  width: 300px;
+  width: 25%;
 }

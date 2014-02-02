@@ -18,7 +18,8 @@ if Meteor.isClient
       setTimeout ->
         $('#overlay').animate
           opacity: 0
-      , 1000
+          'z-index': -1
+      , 500
       
 
     $('#fbphotos').isotope
@@ -36,8 +37,8 @@ if Meteor.isClient
       profile.largeHeaders = jQuery(window).height() - jQuery(window).height() * .1
       profile.largeHeaders = 450  if profile.largeHeaders < 450
 
-      jQuery(".fullwidthimage").css height: profile.largeHeaders / 1.45
-      jQuery(".fullwidthimage .title > div").css height: profile.largeHeaders / 1.45
+      jQuery(".fullwidthimage").css height: profile.largeHeaders / 1.2
+      jQuery(".fullwidthimage .title > div").css height: profile.largeHeaders / 1.2
       jQuery(".home .fullwidthimage.home-logo").css #, backgroundSize: '100% auto'
         height: profile.largeHeaders + jQuery("header .nav-main").height()
         backgroundPosition: "center center"
