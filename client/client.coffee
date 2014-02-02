@@ -28,13 +28,38 @@ Template.whatever.rendered = ->
         opacity: 0
         'z-index': -1
     , 500
-    
 
-  $('#fbphotos').isotope
-    layoutMode : 'masonry'
-  console.log (Session.get 'facebook'), 'hello'
+  console.log(Session.get 'facebook')
+
+  #================
+  console.log 'fb info loaded!'
+  # $('#fbphotos').isotope
+  #   layoutMode : 'masonry'
+
+  $container = $("#fbphotos")
+  # initialize Isotope
+  console.log $container.width()
+  $container.isotope
+    # options...
+    resizable: false # disable normal resizing
+    # set columnWidth to a percentage of container width
+    masonry:
+      columnWidth: $container.width() / 4
+
+  # update columnWidth on window resize
+  $(window).smartresize ->
+    # update columnWidth to a percentage of container width
+    console.log $container.width() / 4
+    $container.isotope masonry:
+      columnWidth: $container.width() / 4
+
+  #================
 
   if Session.get 'facebook'
+
+    #trying shit
+    $('#fbphotos').isotope 'reloadItems'
+
     console.log "jquery!"
     profile = new Object()
     profile.largeimage = Array
