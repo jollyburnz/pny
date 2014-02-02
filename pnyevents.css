@@ -1,12 +1,14 @@
-/* CSS declarations go here */
-/*body{
-  background: #F2DAFF;
+#overlay{
+  background: #000;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  opacity: 1;
 }
 
-#college{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -320px;
-  margin-top: -290px;
-}*/
+.box{
+  width: 300px;
+}

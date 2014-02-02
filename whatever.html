@@ -125,9 +125,14 @@
     </div>
     
   
-    <div class="wrap clearfix container-fluid">       
+    <div class="wrap clearfix container-fluid" style="min-height: 3000px">       
       <div class="row-fluid">
-        <div class="fourcol span4 church-list first clearfix">
+        <div id='fbphotos'>
+          {{#each photos}}
+            <img class='box' src="{{source}}" />
+          {{/each}}
+        </div>
+<!--         <div class="fourcol span4 church-list first clearfix">
         1                  
         </div>
 
@@ -149,7 +154,7 @@
 
         <div class="fourcol span4 church-list last">
         6
-        </div>
+        </div> -->
                             
       </div>
     </div>
