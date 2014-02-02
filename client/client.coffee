@@ -8,6 +8,15 @@ Meteor.startup ->
       console.log aaa
       Session.set 'facebook', aaa.data
 
+Template.admin.rendered = ->
+  window.onload = ->
+    console.log 'load!'
+    setTimeout ->
+      $('#overlay').animate
+        opacity: 0
+        'z-index': -1
+    , 500
+
 Template.whatever.photos = ->
   Session.get 'facebook'
 
