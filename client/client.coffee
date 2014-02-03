@@ -84,8 +84,11 @@ Template.whatever.events
   "click #submit": (e,t) ->
     e.preventDefault()
     console.log e, t, 'submit'
-    email = t.find('#email').value
-    console.log email
+    email_address = t.find('#email').value
+    console.log email_address
+
+    Emails.insert
+      email: email_address
 
 
 Template.hello.greeting = ->
