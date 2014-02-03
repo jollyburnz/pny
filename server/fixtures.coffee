@@ -5,7 +5,6 @@ if Emails.find().count() is 0
   Emails.insert
     email: 'philzelonky@gmail.com'
 
-
 if Photo1.find().count() is 0
   Photo1.insert
     filename: 'insta-home_test.jpg'

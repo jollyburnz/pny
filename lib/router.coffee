@@ -6,10 +6,7 @@ Router.map ->
     path: "/"
 
   @route 'admin',
-    path: "philzelonky"
+    path: "philzelonky9176926098"
 
   @route 'collegetour',
     path: "/collegetour"
-
-
-
