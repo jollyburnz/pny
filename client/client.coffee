@@ -1,4 +1,6 @@
 Meteor.startup ->
+  filepicker.setKey("AO1f1U4OR4ewgjfQ4uy70z");
+  
   Meteor.call 'getfbphotos', (err, res) ->
     if err?
       console.log 'err', err
@@ -16,6 +18,83 @@ Template.admin.rendered = ->
         opacity: 0
         'z-index': -1
     , 500
+
+  console.log 'ADMIN POWER!'
+  filepicker.constructWidget(document.getElementById('photo1'));
+  filepicker.constructWidget(document.getElementById('photo2'));
+  filepicker.constructWidget(document.getElementById('photo3'));
+
+Template.admin.photo1 = ->
+  Photo1.findOne({}, {sort:{date:-1}})
+
+Template.admin.photo2 = ->
+  Photo2.findOne({}, {sort:{date:-1}})
+
+Template.admin.photo3 = ->
+  Photo3.findOne({}, {sort:{date:-1}})
+
+Template.admin.title2 = ->
+  Title2.findOne({}, {sort:{date:-1}})
+
+Template.admin.title3 = ->
+  Title3.findOne({}, {sort:{date:-1}})
+
+Template.admin.events
+  'change #photo1': (e, t) ->
+    #console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'files'
+    Photo1.insert
+      filename: e.files[0].data.filename
+      url: e.files[0].url
+      date: new Date()
+
+  'change #photo2': (e, t) ->
+    #console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'files'
+    Photo2.insert
+      filename: e.files[0].data.filename
+      url: e.files[0].url
+      date: new Date()
+
+  'change #photo3': (e, t) ->
+    #console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'files'
+    Photo3.insert
+      filename: e.files[0].data.filename
+      url: e.files[0].url
+      date: new Date()
+
+  'keyup #title2': (e, t) ->
+    if e.keyCode is 13
+      title2 = t.find('#title2').value
+      Title2.insert
+        title: title2
+        date: new Date()
+
+      t.find('#title2').value = "" #blank out field
+
+
+
+  'keyup #title3': (e, t) ->
+    if e.keyCode is 13
+      title3 = t.find('#title3').value
+      Title3.insert
+        title: title3
+        date: new Date()
+
+      t.find('#title3').value = "" #blank out field
+
+Template.whatever.photo1 = ->
+  Photo1.findOne({}, {sort:{date:-1}})
+
+Template.whatever.photo2 = ->
+  Photo2.findOne({}, {sort:{date:-1}})
+
+Template.whatever.photo3 = ->
+  Photo3.findOne({}, {sort:{date:-1}})
+
+Template.whatever.title2 = ->
+  Title2.findOne({}, {sort:{date:-1}})
+
+Template.whatever.title3 = ->
+  Title3.findOne({}, {sort:{date:-1}})
 
 Template.whatever.photos = ->
   Session.get 'facebook'
@@ -89,12 +168,3 @@ Template.whatever.events
 
     Emails.insert
       email: email_address
-
-
-Template.hello.greeting = ->
-  "Welcome to pnyevents."
-
-Template.hello.events "click input": ->
-  
-  # template data, if any, is available in 'this'
-  console.log "You pressed the button"  if typeof console isnt "undefined"

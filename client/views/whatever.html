@@ -35,7 +35,8 @@
     <!-- end header -->
     <div id="wrap">
       <!-- Get Post's Featured Image -->
-      <div class="fullwidthimage home-logo" style="background-image: url(http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/insta-home_test.jpg) !important;">
+      <!-- <div class="fullwidthimage home-logo" style="background-image: url(http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/insta-home_test.jpg) !important;"> -->
+      <div class="fullwidthimage home-logo" style="background-image: url({{photo1.url}}) !important;">
          <div class="title">
             <div>
               <h1><img src='pny-logo.png'></h1>
@@ -137,11 +138,12 @@
 
     <!-- Get Post's Featured Image -->
     
-    <div class="fullwidthimage" style="background-image: url(http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/skyline.jpg) !important;">
+    <!-- <div class="fullwidthimage" style="background-image: url(http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/skyline.jpg) !important;"> -->
+    <div class="fullwidthimage" style="background-image: url({{photo2.url}}) !important;">
        <div class="title">
           <div>
              <h1>
-                Friday, Feb 14             
+                {{title2.title}}
               </h1>
           </div>
        </div>
@@ -154,41 +156,17 @@
           {{#each photos}}
             <img class='box' src="{{source}}" />
           {{/each}}
-        </div>
-<!--         <div class="fourcol span4 church-list first clearfix">
-        1                  
-        </div>
-
-        <div class="fourcol span4 church-list ">
-        2                 
-        </div>
-
-        <div class="fourcol span4 church-list last">
-        3                 
-        </div>
-
-        <div class="fourcol span4 church-list first clearfix">
-        4            
-        </div>
-
-        <div class="fourcol span4 church-list ">
-        5
-        </div>
-
-        <div class="fourcol span4 church-list last">
-        6
-        </div> -->
-                            
+        </div>              
       </div>
     </div>
 
     <!-- Get Post's Featured Image -->
     
-    <div class="fullwidthimage" style="background-image: url(http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/bridge.jpg) !important;">
+    <div class="fullwidthimage" style="background-image: url({{photo3.url}}) !important;}}">
        <div class="title">
           <div>
              <h1>
-                News             
+                {{title3.title}}
               </h1>
           </div>
        </div>
