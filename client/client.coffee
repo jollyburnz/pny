@@ -10,6 +10,8 @@ Meteor.startup ->
       console.log aaa
       Session.set 'facebook', aaa.data
 
+    Session.set('done', false)
+
 Template.admin.rendered = ->
   window.onload = ->
     console.log 'load!'
@@ -99,6 +101,9 @@ Template.whatever.title3 = ->
 Template.whatever.photos = ->
   Session.get 'facebook'
 
+Template.whatever.done = ->
+  Session.equals 'done', true
+
 Template.whatever.rendered = ->
   window.onload = ->
     console.log 'load!'
@@ -168,3 +173,7 @@ Template.whatever.events
 
     Emails.insert
       email: email_address
+
+    Meteor.call('sendEmail', email_address)
+
+    Session.set 'done', true

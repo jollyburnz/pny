@@ -1,4 +1,6 @@
 Meteor.startup ->
+  process.env.MAIL_URL = "smtp://postmaster@sandbox18028.mailgun.org:9q3nxrc3rs88@smtp.mailgun.org:587"
+
   Meteor.methods
     getfbphotos: ->
       @unblock()
@@ -6,18 +8,16 @@ Meteor.startup ->
       #console.log yo, 'yooo'
       yo
 
-    sendEmail: (to, from, subject, text) ->
-      check [to, from, subject, text], [String]
-
-      # Let other method calls from the same client start running,
-      # without waiting for the email sending to complete.
-      @unblock()
+    sendEmail: (email) ->  
+      # send the email!
+      console.log email, 'email'
       Email.send
-        to: to
-        from: from
-        subject: subject
-        text: text
-        , (err) ->
-          console.log err
+        to: email
+        from: "newsletter@pnyevents.com"
+        subject: "[PNY Events] Thank you for joining our newsletter!"
+        text: "We will share with you some news about us in a near future. See you soon! Party on!"
 
-      console.log "Sent e-mail"
+
+
+
+

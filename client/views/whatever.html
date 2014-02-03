@@ -88,7 +88,14 @@
                 <br/>
                 <img src='newsletter.png'/>
               </div>
+
               <div class="span8 last">
+                {{#if done}}
+                <br/><br/>
+                <h2>Email sent!<br/>You are now subscribed to the newsletter!</h2>
+
+                {{else}}
+
                 <h2>Join Newsletter</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -106,7 +113,11 @@
                     <br/><br/>
                   </div>
                 </div>
+                
+                {{/if}}
+
               </div>
+
             </div>
           
 <!--             <div class="clearfix homethreeboxes row-fluid">
