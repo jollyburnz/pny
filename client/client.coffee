@@ -80,6 +80,14 @@ Template.whatever.rendered = ->
       $('#fbphotos').isotope('reLayout')
     , 500
 
+Template.whatever.events 
+  "click #submit": (e,t) ->
+    e.preventDefault()
+    console.log e, t, 'submit'
+    email = t.find('#email').value
+    console.log email
+
+
 Template.hello.greeting = ->
   "Welcome to pnyevents."
 
