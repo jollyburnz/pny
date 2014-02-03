@@ -57,9 +57,6 @@ Template.whatever.rendered = ->
 
   if Session.get 'facebook'
 
-    #trying shit
-    $('#fbphotos').isotope 'reloadItems'
-
     console.log "jquery!"
     profile = new Object()
     profile.largeimage = Array
@@ -78,6 +75,10 @@ Template.whatever.rendered = ->
       backgroundPosition: "center center"
 
     jQuery(".home .fullwidthimage.home-logo .title > div").css height: profile.largeHeaders + jQuery("header .nav-main").height()
+
+    setTimeout ->
+      $('#fbphotos').isotope('reLayout')
+    , 500
 
 Template.hello.greeting = ->
   "Welcome to pnyevents."
