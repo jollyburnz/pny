@@ -30,3 +30,24 @@ header, #content, body{
 .box{
   width: 25%;
 }
+
+input{
+  color: #000;
+  position: relative;
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  height: 36px;
+  line-height: 34px;
+  font-size: 16px;
+  font-size: 1rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+input:focus{
+  outline: none;
+}
