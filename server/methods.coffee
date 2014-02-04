@@ -16,8 +16,3 @@ Meteor.startup ->
         from: "newsletter@pnyevents.com"
         subject: "[PNY Events] Thank you for joining our newsletter!"
         text: "We will share with you some news about us in a near future. See you soon! Party on!"
-
-
-
-
-

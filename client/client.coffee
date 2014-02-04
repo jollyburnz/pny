@@ -177,3 +177,13 @@ Template.whatever.events
     Meteor.call('sendEmail', email_address)
 
     Session.set 'done', true
+
+
+Template.events.rendered = ->
+  window.onload = ->
+    console.log 'load!'
+    setTimeout ->
+      $('#overlay').animate
+        opacity: 0
+        'z-index': -1
+    , 500
