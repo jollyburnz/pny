@@ -11,3 +11,5 @@ http
 coffeescript
 iron-router
 email
+
+ngMeteor

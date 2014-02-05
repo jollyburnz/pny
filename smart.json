@@ -1,6 +1,7 @@
 {
   "packages": {
     "iron-router": {},
-    "filepicker": {}
+    "filepicker": {},
+    "ngMeteor": {}
   }
 }

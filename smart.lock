@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
-      "filepicker": {}
+      "filepicker": {},
+      "ngMeteor": {}
     },
     "packages": {
       "iron-router": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/Ink/meteor.git",
         "tag": "v0.4.0",
         "commit": "20d56aaaf48be3a5c0499547a495a6463b4fa3d9"
+      },
+      "ngMeteor": {
+        "git": "https://github.com/loneleeandroo/ngMeteor.git",
+        "tag": "v0.1.5",
+        "commit": "370af86ae1911da9aaaa6a4a77fd96ad9411cff0"
       }
     }
   }
