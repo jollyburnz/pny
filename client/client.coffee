@@ -13,6 +13,14 @@ Meteor.startup ->
     Session.set('done', false)
 
 Template.admin.rendered = ->
+  $('#datetimepicker').datetimepicker
+    timepicker:false
+    inline:true
+    onChangeDateTime: (dp, $input) ->
+      date = $input.val()
+      console.log date
+      Session.set 'date', Date.parse(date)
+
   window.onload = ->
     console.log 'load!'
     setTimeout ->
@@ -42,6 +50,11 @@ Template.admin.title3 = ->
   Title3.findOne({}, {sort:{date:-1}})
 
 Template.admin.events
+  'click #add-event': (e, t) ->
+    console.log (Session.get 'date')
+    Events.insert
+      date: Session.get 'date'
+
   'change #photo1': (e, t) ->
     #console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'files'
     Photo1.insert
@@ -71,8 +84,6 @@ Template.admin.events
         date: new Date()
 
       t.find('#title2').value = "" #blank out field
-
-
 
   'keyup #title3': (e, t) ->
     if e.keyCode is 13
@@ -197,9 +208,25 @@ Template.events1.today = ->
 Template.events1.next = ->
   Session.equals 'evt', 'next'
 
+Template.events1.eventsofpast = ->
+  Events.find(date:{"$lte": monday})
+
+Template.events1.eventsthisweek = ->
+  Events.find(date: {"$gte": monday, "$lte": sunday})
+
+Template.events1.eventsnextweek = ->
+  Events.find(date: {"$gte": next_monday, "$lte": next_sunday})
+
 Template.events1.rendered = ->
+  window.monday = moment().weekday(0)._d
+  window.sunday = moment().weekday(7)._d
+  window.next_monday = moment().weekday(7)._d
+  window.next_sunday = moment().weekday(14)._d
+
   window.onload = ->
+    Session.set 'evt', 'today'
     console.log 'load!'
+
     setTimeout ->
       $('#overlay').animate
         opacity: 0
@@ -214,7 +241,11 @@ Template.events1.events
   "click #this": (e, t) ->
     console.log 'this'
     Session.set 'evt', 'today'
+    console.log monday, 'monday'
+    console.log sunday, 'sunday'
   
   "click #next": (e, t) ->
     console.log 'next'
     Session.set 'evt', 'next'
+    console.log next_monday, 'next monday'
+    console.log next_sunday, 'next sunday'

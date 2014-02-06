@@ -1,21 +1,82 @@
 <template name='events1'>
-  <div class="btn-group">
-    <button type="button" id="past" class="btn btn-default">Past</button>
-    <button type="button" id="this" class="btn btn-default">This week</button>
-    <button type="button" id="next" class="btn btn-default">Next week</button>
-  </div>
+      <!--[if lt IE 7]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
+          
+
+      <header class="banner navbar navbar-static-top" role="banner">
+        <div class="navbar-inner">
+          <div class="container">
+
+            <a class="brand" href="#">
+              <img src="pnyevents.png" alt="" />
+            </a>
+            
+  <!--           <nav class="nav-main nav-collapse" role="navigation">        
+              <ul id="menu-primary-navigation" class="nav top-nav clearfix">
+                <li id="menu-item-4099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4099">
+                  <a href="http://sojournnetwork.com/about/" >About</a>
+                </li>
+                <li id="menu-item-4100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100">
+                  <a href="http://sojournnetwork.com/our-churches/" >Churches</a>
+                </li>
+                <li id="menu-item-4101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4101">
+                  <a href="http://sojournnetwork.com/news/" >News</a>
+                </li>
+                <li id="menu-item-4102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4102">
+                  <a href="http://sojournnetwork.com/contact/" >Contact</a>
+                </li>
+              </ul>           
+            </nav>
+   -->
+          </div>
+        </div>    
+      </header>
+    <!-- end header -->
+    
+  <div class='container'>
+
+    <div class='row'>
+      <div class='col-xs-12'>
+        <div class="btn-group  btn-group-justified">
+          <div class="btn-group btn-group-lg">
+            <button type="button" id="past" class="btn btn-default">Past</button>
+          </div>
+          <div class="btn-group btn-group-lg">
+            <button type="button" id="this" class="btn btn-default">This Week</button>
+          </div>
+          <div class="btn-group btn-group-lg">
+            <button type="button" id="next" class="btn btn-default">Next Week</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <br/><br/><br/><br/><br/>
 
+
+
   {{#if past}}
     PAST
+    <br/>
+    {{#each eventsofpast}}
+      {{date}}<br/>
+    {{/each}}
   {{/if}}
 
   {{#if today}}
     THIS
+    <br/>
+    {{#each eventsthisweek}}
+      {{date}}<br/>
+    {{/each}}
   {{/if}}
 
   {{#if next}}
     NEXT
+    <br/>
+    {{#each eventsnextweek}}
+      {{date}}<br/>
+    {{/each}}
   {{/if}}
+
+  </div>
 </template>

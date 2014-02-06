@@ -1,22 +1,28 @@
 <template name="admin">
-    <div class="container-fluid">
-      <div class="wrap row-fluid clearfix">
-        <div class="span12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
           <h2>Adminstration Access</h2>
           <p>Phil, this is your admin page</p>
           <br/>
+          <!-- Button trigger modal -->
+          <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+            Add Event
+          </button>
+          <br/>
+          <br/>
           <label>Photo One</label><br/>
-          <input type="filepicker" id="photo1">
+          <input type="filepicker" id="photo1"><br/>
           <img src='{{photo1.url}}' />
           <br/>
           <br/>
           <label>Photo Two</label><br/>
-          <input type="filepicker" id="photo2">
+          <input type="filepicker" id="photo2"><br/>
           <img src='{{photo2.url}}' />
           <br/>
           <br/>
           <label>Photo Three</label><br/>
-          <input type="filepicker" id="photo3">
+          <input type="filepicker" id="photo3"><br/>
           <img src='{{photo3.url}}' />
           <br/>
           <br/>
@@ -28,8 +34,33 @@
           <label>Title Three</label><br/>
           <input type="text" id="title3" placeholder="Enter Title 3">
           {{title3.title}}
+
+          <br/>
+          <br/>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <b class="modal-title" id="myModalLabel" style='color: #000; font-size: 1.1em'>Add Event</b>
+                </div>
+                <div class="modal-body">
+                  ...
+                  <input id="datetimepicker" type="text" >
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" id="add-event" class="btn btn-success">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
+
 
 </template>

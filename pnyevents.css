@@ -51,3 +51,7 @@ input{
 input:focus{
   outline: none;
 }
+
+.xdsoft_datetimepicker *{
+  color: #000;
+}
