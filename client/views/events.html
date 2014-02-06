@@ -1,3 +1,26 @@
 <template name='events'>
   <h2>Events!</h2>
+  <br/>
+    <div ng-app>
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello [[yourName]]!</h1>
+    </div>
+
+  <h2>Todo</h2>
+  <div ng-controller="TodoCtrl">
+    <span>[[remaining()]] of [[Todos.length]] remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+      <li ng-repeat="todo in Todos | filter:todoText">
+        <input type="checkbox" ng-model="todo.done" ng-change="saveTodo()">
+        <span class="done-[[todo.done]]">[[todo.text]]</span>
+      </li>
+    </ul>
+    <form ng-submit="addTodo()">
+      <input type="search" ng-model="todoText" size="30" placeholder="search/add new todo here">
+      <input class="btn btn-primary" type="submit" value="add">
+    </form>
+  </div>
 </template>

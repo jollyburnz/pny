@@ -187,3 +187,34 @@ Template.events.rendered = ->
         opacity: 0
         'z-index': -1
     , 500
+
+Template.events1.past = ->
+  Session.equals 'evt', 'past'
+
+Template.events1.today = ->
+  Session.equals 'evt', 'today'
+
+Template.events1.next = ->
+  Session.equals 'evt', 'next'
+
+Template.events1.rendered = ->
+  window.onload = ->
+    console.log 'load!'
+    setTimeout ->
+      $('#overlay').animate
+        opacity: 0
+        'z-index': -1
+    , 500
+
+Template.events1.events
+  "click #past": (e, t) ->
+    console.log 'past'
+    Session.set 'evt', 'past'
+  
+  "click #this": (e, t) ->
+    console.log 'this'
+    Session.set 'evt', 'today'
+  
+  "click #next": (e, t) ->
+    console.log 'next'
+    Session.set 'evt', 'next'

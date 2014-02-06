@@ -1,0 +1,21 @@
+<template name='events1'>
+  <div class="btn-group">
+    <button type="button" id="past" class="btn btn-default">Past</button>
+    <button type="button" id="this" class="btn btn-default">This week</button>
+    <button type="button" id="next" class="btn btn-default">Next week</button>
+  </div>
+
+  <br/><br/><br/><br/><br/>
+
+  {{#if past}}
+    PAST
+  {{/if}}
+
+  {{#if today}}
+    THIS
+  {{/if}}
+
+  {{#if next}}
+    NEXT
+  {{/if}}
+</template>
