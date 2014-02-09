@@ -218,6 +218,10 @@ Template.events1.eventsnextweek = ->
   Events.find(date: {"$gte": next_monday, "$lte": next_sunday})
 
 Template.events1.rendered = ->
+  $('.selectpicker').selectpicker
+    style: 'btn-info btn-lg'
+    size: 4
+
   window.monday = moment().weekday(0)._d
   window.sunday = moment().weekday(7)._d
   window.next_monday = moment().weekday(7)._d
