@@ -216,14 +216,16 @@ Template.events1.next = ->
   Session.equals 'evt', 'next'
 
 Template.events1.eventsofpast = ->
-  console.log(Session.get 'city')
-  Events.find({location: 'New York', date:{"$lte": monday}})
+  chosen = Session.get 'choose'
+  Events.find({location: chosen, date:{"$lte": monday}})
 
 Template.events1.eventsthisweek = ->
-  Events.find({location: 'New York', date: {"$gte": monday, "$lte": sunday}})
+  chosen = Session.get 'choose'
+  Events.find({location: chosen, date: {"$gte": monday, "$lte": sunday}})
 
 Template.events1.eventsnextweek = ->
-  Events.find({location: 'New York', date: {"$gte": next_monday, "$lte": next_sunday}})
+  chosen = Session.get 'choose'
+  Events.find({location: chosen, date: {"$gte": next_monday, "$lte": next_sunday}})
 
 Template.events1.rendered = ->
   window.monday = moment().weekday(0)._d
@@ -233,6 +235,7 @@ Template.events1.rendered = ->
 
   window.onload = ->
     Session.set 'evt', 'today'
+    Session.set 'choose', 'New York' #default is New York
     console.log 'load!'
 
     setTimeout ->
@@ -242,6 +245,10 @@ Template.events1.rendered = ->
     , 500
 
 Template.events1.events
+  'change #choose': (e, t) ->
+    console.log 'asdfasd'
+    Session.set 'choose', $('#choose').val()
+
   "click #past": (e, t) ->
     console.log 'past'
     Session.set 'evt', 'past'
