@@ -57,6 +57,7 @@ Template.admin.events
     Events.insert
       date: Session.get 'date'
       location: Session.get 'city'
+      url: 'http://placedog.com/g/600/800'
 
   'change #choose-city': (e, t) ->
     city = $('#choose-city').val()
@@ -135,8 +136,6 @@ Template.whatever.rendered = ->
 
   #================
   console.log 'fb info loaded!'
-  # $('#fbphotos').isotope
-  #   layoutMode : 'masonry'
 
   $container = $("#fbphotos")
   # initialize Isotope
@@ -264,3 +263,9 @@ Template.events1.events
     Session.set 'evt', 'next'
     console.log next_monday, 'next monday'
     console.log next_sunday, 'next sunday'
+
+Template.eventItem.rendered = ->
+  $(@.find('.front')).backstretch(@.data.url)
+
+Template.pastEventItem.rendered = ->
+  $(@.find('.front')).backstretch(@.data.url)

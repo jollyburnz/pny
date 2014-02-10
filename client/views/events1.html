@@ -59,33 +59,53 @@
       </div>
     </div>
 
-  <br/><br/><br/><br/><br/>
-
-
+  <br/>
 
   {{#if past}}
-    PAST
-    <br/>
     {{#each eventsofpast}}
-      {{date}}<br/>
+      {{> pastEventItem}}
     {{/each}}
   {{/if}}
 
   {{#if today}}
     THIS
     <br/>
+    <div class='row'>
     {{#each eventsthisweek}}
-      {{date}}<br/>
+      {{> eventItem}}
     {{/each}}
+    </div>
   {{/if}}
 
   {{#if next}}
     NEXT
     <br/>
     {{#each eventsnextweek}}
-      {{date}}<br/>
+      {{> eventItem}}
     {{/each}}
   {{/if}}
 
+</div>
+</template>
+
+<template name='pastEventItem'>
+    <div class="card">
+      <div class="front">
+      </div>
+      <div class="back">
+        {{date}}
+      </div>
+    </div>
+</template>
+
+<template name='eventItem'>
+  <div class='col-xs-6'>
+    <div class="card1">
+      <div class="front">
+      </div>
+      <div class="back">
+        {{date}}
+      </div>
+    </div>
   </div>
 </template>
