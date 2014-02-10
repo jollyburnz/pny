@@ -13,6 +13,8 @@ Meteor.startup ->
     Session.set('done', false)
 
 Template.admin.rendered = ->
+  Session.set 'city', 'New York'
+
   $('#datetimepicker').datetimepicker
     timepicker:false
     inline:true
@@ -54,6 +56,11 @@ Template.admin.events
     console.log (Session.get 'date')
     Events.insert
       date: Session.get 'date'
+      location: Session.get 'city'
+
+  'change #choose-city': (e, t) ->
+    city = $('#choose-city').val()
+    Session.set 'city', city
 
   'change #photo1': (e, t) ->
     #console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'files'
@@ -209,19 +216,16 @@ Template.events1.next = ->
   Session.equals 'evt', 'next'
 
 Template.events1.eventsofpast = ->
-  Events.find(date:{"$lte": monday})
+  console.log(Session.get 'city')
+  Events.find({location: 'New York', date:{"$lte": monday}})
 
 Template.events1.eventsthisweek = ->
-  Events.find(date: {"$gte": monday, "$lte": sunday})
+  Events.find({location: 'New York', date: {"$gte": monday, "$lte": sunday}})
 
 Template.events1.eventsnextweek = ->
-  Events.find(date: {"$gte": next_monday, "$lte": next_sunday})
+  Events.find({location: 'New York', date: {"$gte": next_monday, "$lte": next_sunday}})
 
 Template.events1.rendered = ->
-  $('.selectpicker').selectpicker
-    style: 'btn-info btn-lg'
-    size: 4
-
   window.monday = moment().weekday(0)._d
   window.sunday = moment().weekday(7)._d
   window.next_monday = moment().weekday(7)._d
