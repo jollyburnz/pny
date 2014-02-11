@@ -46,25 +46,25 @@
   </div>
 
   <div id="event1">
-    <br/><br/>
+    <br/><br/><br/>
     <div class='container'>
       <div class='row'>
         <div class='col-xs-10 col-xs-offset-1'>
-          <div class='pull-right'>
+          <div style="width:600px; margin: 0 auto;">
             <div class="btn-group btn-group-justified">
               <div class="btn-group">
-                <button type="button" id="past" class="btn btn-default">Past Weeks</button>
+                <button type="button" id="past" class="btn btn-custom btn-lg">Past Weeks</button>
               </div>
               <div class="btn-group">
-                <button type="button" id="this" class="btn btn-default">This Week</button>
+                <button type="button" id="this" class="btn btn-custom btn-lg">This Week</button>
               </div>
               <div class="btn-group">
-                <button type="button" id="next" class="btn btn-default">Next Week</button>
+                <button type="button" id="next" class="btn btn-custom btn-lg">Next Week</button>
               </div>
             </div>
           </div>
 
-          <br/>
+          <br/><br/><br/><br/>
 
           {{#if past}}
             {{#each eventsofpast}}
@@ -73,7 +73,6 @@
           {{/if}}
 
           {{#if today}}
-            THIS
             <br/>
             <div class='row'>
             {{#each eventsthisweek}}
@@ -83,17 +82,18 @@
           {{/if}}
 
           {{#if next}}
-            NEXT
             <br/>
             {{#each eventsnextweek}}
               {{> eventItem}}
             {{/each}}
           {{/if}}
-          
+
         </div>
       </div>
     </div>
-    <br/><br/>
+
+    <br/><br/><br/><br/>
+
   </div>
 </template>
 
