@@ -57,7 +57,7 @@ Template.admin.events
     Events.insert
       date: Session.get 'date'
       location: Session.get 'city'
-      url: 'http://placedog.com/g/600/800'
+      url: 'http://placekitten.com/g/400/600'
 
   'change #choose-city': (e, t) ->
     city = $('#choose-city').val()
@@ -214,6 +214,9 @@ Template.events1.today = ->
 Template.events1.next = ->
   Session.equals 'evt', 'next'
 
+Template.events1.choose = ->
+  Session.get 'choose'
+
 Template.events1.eventsofpast = ->
   chosen = Session.get 'choose'
   Events.find({location: chosen, date:{"$lte": monday}})
@@ -232,10 +235,22 @@ Template.events1.rendered = ->
   window.next_monday = moment().weekday(7)._d
   window.next_sunday = moment().weekday(14)._d
 
+  if Session.equals 'evt', 'past'
+    console.log 'PAST'
+    $("#past").addClass 'active'
+  else if Session.equals 'evt', 'today'
+    console.log 'TODAY'
+    $("#this").addClass 'active'
+  else if Session.equals 'evt', 'next'
+    console.log 'NEXT'
+    $("#next").addClass 'active'
+
   window.onload = ->
     Session.set 'evt', 'today'
     Session.set 'choose', 'New York' #default is New York
     console.log 'load!'
+
+    $('body').backstretch('http://placekitten.com/g/400/600')
 
     setTimeout ->
       $('#overlay').animate
