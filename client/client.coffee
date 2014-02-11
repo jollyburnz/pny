@@ -94,9 +94,6 @@ Template.admin.events
       url: e.files[0].url
       date: new Date()
 
-  'change #flyer': (e, t) ->
-    Session.set 'flyer', e.files[0].url
-
   'keyup #title2': (e, t) ->
     if e.keyCode is 13
       title2 = t.find('#title2').value
