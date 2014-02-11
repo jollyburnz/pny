@@ -23,7 +23,7 @@ p{
   color: #fff;
 }
 
-header, #content, body{
+header, #content, body, #event1{
   //background: #000 !important;
   background: url(twinkle_twinkle.png) !important;
 }
@@ -58,7 +58,6 @@ input:focus{
 }
 
 #event1{
-  background: #000;
   min-height: 500px;
 }
 

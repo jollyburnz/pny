@@ -253,7 +253,7 @@ Template.events1.rendered = ->
     $('body').backstretch('boston.jpg')
 
   else if Session.equals 'choose', 'DC'
-    $('body').backstretch('dc10.jpg')
+    $('body').backstretch('dc12.jpg')
 
   window.onload = ->
     Session.set 'evt', 'today'
@@ -287,6 +287,10 @@ Template.events1.events
     Session.set 'evt', 'next'
     console.log next_monday, 'next monday'
     console.log next_sunday, 'next sunday'
+
+Template.eventItem.day = ->
+  console.log @.date, moment(@.date).format('dddd')
+  moment(@.date).format('dddd, MMM Do')
 
 Template.eventItem.rendered = ->
   $(@.find('.front')).backstretch(@.data.url)

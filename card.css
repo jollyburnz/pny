@@ -31,7 +31,7 @@
 
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-    background: #27ae60;
+    background: url(star.png) center center;
     text-align: center;
 }
 
@@ -81,8 +81,9 @@
 .card1 .back{
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-    background: #27ae60;
+    background: url(star.png);
     text-align: center;
+    border: 1px solid #1F1F1F;
 }
 
 /* The .front card needs to rotate when we hover, 180 degrees will do the trick*/
