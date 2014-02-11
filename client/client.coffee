@@ -295,5 +295,9 @@ Template.eventItem.day = ->
 Template.eventItem.rendered = ->
   $(@.find('.front')).backstretch(@.data.url)
 
+Template.pastEventItem.day = ->
+  console.log @.date, moment(@.date).format('dddd')
+  moment(@.date).format('dddd, MMM Do')
+
 Template.pastEventItem.rendered = ->
   $(@.find('.front')).backstretch(@.data.url)

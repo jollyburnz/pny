@@ -1,9 +1,11 @@
 /* Styles for the card*/
 .card{
-    width: 200px;
-    height: 300px;
-    float: left;
-    margin: 0.5em;
+  width: 100%;
+  padding-bottom: 150%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 15%;
 }       
 
 /* Stack both divs and hide their backs */
@@ -22,8 +24,8 @@
 /* Assign a perspective, try this value */
     transform: perspective(600px);
     -webkit-transform: perspective(600px);
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
 }
 
 /* The .back element should be rotated at first, facing his back, hidden*/
@@ -51,15 +53,18 @@
 
 /* Styles for the card*/
 .card1{
-    width: 400px;
-    height: 600px;
-    float: left;
-    margin: 0.5em;
+  width: 100%;
+  padding-bottom: 150%;
+  position: relative;
+  top: 0;
+  left: 0;
 }       
 
 /* Stack both divs and hide their backs */
 .card1 .front, .card1 .back{
     position: absolute;
+    top: 0;
+    left: 0;
 
     -webkit-backface-visibility: hidden;
        -moz-backface-visibility: hidden;
@@ -73,8 +78,8 @@
 /* Assign a perspective, try this value */
     transform: perspective(600px);
     -webkit-transform: perspective(600px);
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
 }
 
 /* The .back element should be rotated at first, facing his back, hidden*/

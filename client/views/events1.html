@@ -67,9 +67,12 @@
           <br/><br/><br/><br/>
 
           {{#if past}}
+            <br/>
+            <div class='row'>
             {{#each eventsofpast}}
               {{> pastEventItem}}
             {{/each}}
+            </div>
           {{/if}}
 
           {{#if today}}
@@ -98,21 +101,23 @@
 </template>
 
 <template name='pastEventItem'>
+  <div class='col-md-3'>
     <div class="card">
-      <div class="front">
+      <div class="front img-responsive">
       </div>
-      <div class="back">
-        {{date}}
+      <div class="back img-responsive">
+        <h3>{{day}}</h3>
       </div>
     </div>
+  </div>
 </template>
 
 <template name='eventItem'>
   <div class='col-xs-6'>
     <div class="card1">
-      <div class="front">
+      <div class="front img-responsive">
       </div>
-      <div class="back">
+      <div class="back img-responsive">
         <br/>
         <h2>{{day}}</h2>
       </div>
