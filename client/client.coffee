@@ -238,6 +238,7 @@ Template.events1.rendered = ->
   if Session.equals 'evt', 'past'
     console.log 'PAST'
     $("#past").addClass 'active'
+
   else if Session.equals 'evt', 'today'
     console.log 'TODAY'
     $("#this").addClass 'active'
@@ -245,12 +246,20 @@ Template.events1.rendered = ->
     console.log 'NEXT'
     $("#next").addClass 'active'
 
+  if Session.equals 'choose', 'New York'
+    $('body').backstretch('newyork.jpg')
+
+  else if Session.equals 'choose', 'Boston'
+    $('body').backstretch('boston.jpg')
+
+  else if Session.equals 'choose', 'DC'
+    $('body').backstretch('dc10.jpg')
+
   window.onload = ->
     Session.set 'evt', 'today'
     Session.set 'choose', 'New York' #default is New York
     console.log 'load!'
 
-    $('body').backstretch('http://placekitten.com/g/400/600')
 
     setTimeout ->
       $('#overlay').animate
