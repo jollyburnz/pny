@@ -61,6 +61,20 @@ input:focus{
   min-height: 500px;
 }
 
+.jqte_Content{
+  height: 200px;
+}
+
+.description{
+  text-align: left;
+  padding: 0 20px;
+}
+
+#preview{
+  height: 100px;
+  width: 100px;
+}
+
 .btn-custom {
   background-color: hsl(271, 21%, 30%) !important;
   background-repeat: repeat-x;

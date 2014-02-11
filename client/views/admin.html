@@ -48,14 +48,28 @@
                 <div class="modal-body">
                   <div class='row'>
                     <div class='col-xs-6'>
-                     <select id='choose-city' class="form-control">
+                      <input id="datetimepicker" type="text">
+                      <br/><br/>
+                    </div>
+                    <div class='col-xs-6'>
+                      <select id='choose-city' class="form-control">
                         <option>New York</option>
                         <option>Boston</option>
                         <option>DC</option>
                       </select>
+                      <br/>
+                      <div class="input-group">
+                        <input type="text" id='venue' class="form-control" placeholder="Enter venue">
+                        <span class="input-group-addon"><i class="fa fa-glass"></i></span>
+                      </div>
+                      <br/>
+                      <input type="filepicker" id="flyer"><br/>
+                      <img id='preview' src="{{flyer}}"/>
                     </div>
-                    <div class='col-xs-6'>
-                      <input id="datetimepicker" type="text">
+                    <div class='col-xs-12'>
+                      <textarea id='desc'>
+                        <p>Enter your description</p>
+                      </textarea>
                     </div>
                   </div>
                 </div>

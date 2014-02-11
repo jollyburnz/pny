@@ -23,6 +23,8 @@ Template.admin.rendered = ->
       console.log date
       Session.set 'date', Date.parse(date)
 
+  $("textarea").jqte()
+
   window.onload = ->
     console.log 'load!'
     setTimeout ->
@@ -32,9 +34,10 @@ Template.admin.rendered = ->
     , 500
 
   console.log 'ADMIN POWER!'
-  filepicker.constructWidget(document.getElementById('photo1'));
-  filepicker.constructWidget(document.getElementById('photo2'));
-  filepicker.constructWidget(document.getElementById('photo3'));
+  filepicker.constructWidget(document.getElementById('photo1'))
+  filepicker.constructWidget(document.getElementById('photo2'))
+  filepicker.constructWidget(document.getElementById('photo3'))
+  filepicker.constructWidget(document.getElementById('flyer'))
 
 Template.admin.photo1 = ->
   Photo1.findOne({}, {sort:{date:-1}})
@@ -51,13 +54,20 @@ Template.admin.title2 = ->
 Template.admin.title3 = ->
   Title3.findOne({}, {sort:{date:-1}})
 
+Template.admin.flyer = ->
+  Session.get 'flyer'
+
 Template.admin.events
   'click #add-event': (e, t) ->
     console.log (Session.get 'date')
+    venue1 = $('#venue').val()
+    
     Events.insert
       date: Session.get 'date'
       location: Session.get 'city'
-      url: 'http://placekitten.com/g/400/600'
+      venue: $('#venue').val()
+      description: $('#desc').val()
+      url: Session.get 'flyer'
 
   'change #choose-city': (e, t) ->
     city = $('#choose-city').val()
@@ -83,6 +93,9 @@ Template.admin.events
       filename: e.files[0].data.filename
       url: e.files[0].url
       date: new Date()
+
+  'change #flyer': (e, t) ->
+    Session.set 'flyer', e.files[0].url
 
   'keyup #title2': (e, t) ->
     if e.keyCode is 13
