@@ -224,6 +224,9 @@ Template.events1.today = ->
 Template.events1.next = ->
   Session.equals 'evt', 'next'
 
+Template.events1.upcoming = ->
+  Session.equals 'evt', 'upcoming'
+
 Template.events1.choose = ->
   Session.get 'choose'
 
@@ -239,12 +242,12 @@ Template.events1.eventsnextweek = ->
   chosen = Session.get 'choose'
   Events.find({location: chosen, date: {"$gte": next_monday, "$lte": next_sunday}})
 
-Template.events1.rendered = ->
-  window.monday = moment().weekday(0)._d
-  window.sunday = moment().weekday(7)._d
-  window.next_monday = moment().weekday(7)._d
-  window.next_sunday = moment().weekday(14)._d
+Template.events1.allupcoming = ->
+  chosen = Session.get 'choose'
+  Events.find({location: chosen, date: {"$gte": tomorrow}})
 
+
+Template.events1.rendered = ->
   if Session.equals 'evt', 'past'
     console.log 'PAST'
     $("#past").addClass 'active'
@@ -252,9 +255,14 @@ Template.events1.rendered = ->
   else if Session.equals 'evt', 'today'
     console.log 'TODAY'
     $("#this").addClass 'active'
+
   else if Session.equals 'evt', 'next'
     console.log 'NEXT'
     $("#next").addClass 'active'
+
+  else if Session.equals 'evt', 'upcoming'
+    console.log 'UPCOMING'
+    $("#upcomings").addClass 'active'
 
   if Session.equals 'choose', 'New York'
     $('body').backstretch('newyork.jpg')
@@ -264,6 +272,12 @@ Template.events1.rendered = ->
 
   else if Session.equals 'choose', 'DC'
     $('body').backstretch('dc12.jpg')
+
+  window.monday = moment().weekday(0)._d
+  window.sunday = moment().weekday(7)._d
+  window.next_monday = moment().weekday(7)._d
+  window.next_sunday = moment().weekday(14)._d
+  window.tomorrow = moment().add('d', 1)
 
   window.onload = ->
     Session.set 'evt', 'today'
@@ -289,14 +303,14 @@ Template.events1.events
   "click #this": (e, t) ->
     console.log 'this'
     Session.set 'evt', 'today'
-    console.log monday, 'monday'
-    console.log sunday, 'sunday'
   
   "click #next": (e, t) ->
     console.log 'next'
     Session.set 'evt', 'next'
-    console.log next_monday, 'next monday'
-    console.log next_sunday, 'next sunday'
+
+  "click #upcomings": (e, t) ->
+    console.log 'upcoming'
+    Session.set 'evt', 'upcoming'
 
 Template.eventItem.day = ->
   console.log @.date, moment(@.date).format('dddd')
