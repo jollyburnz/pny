@@ -67,7 +67,8 @@ Template.admin.events
       location: Session.get 'city'
       venue: $('#venue').val()
       description: $('#desc').val()
-      url: Session.get 'flyer'
+      url: 'http://placekitten.com/g/200/400'
+      #url: Session.get 'flyer'
 
   'change #choose-city': (e, t) ->
     city = $('#choose-city').val()
@@ -244,6 +245,7 @@ Template.events1.eventsnextweek = ->
 
 Template.events1.allupcoming = ->
   chosen = Session.get 'choose'
+  console.log tomorrow
   Events.find({location: chosen, date: {"$gte": tomorrow}})
 
 
@@ -277,7 +279,7 @@ Template.events1.rendered = ->
   window.sunday = moment().weekday(7)._d
   window.next_monday = moment().weekday(7)._d
   window.next_sunday = moment().weekday(14)._d
-  window.tomorrow = moment().add('d', 1)
+  window.tomorrow = moment().add('d', 1)._d
 
   window.onload = ->
     Session.set 'evt', 'today'
