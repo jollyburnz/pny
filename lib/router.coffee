@@ -11,5 +11,8 @@ Router.map ->
   @route 'events1',
     path: 'events'
 
+  @route 'contactus',
+    path: 'contact'
+
   @route 'collegetour',
     path: "/collegetour"

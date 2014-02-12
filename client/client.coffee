@@ -327,3 +327,15 @@ Template.pastEventItem.day = ->
 
 Template.pastEventItem.rendered = ->
   $(@.find('.front')).backstretch(@.data.url)
+
+
+Template.contactus.rendered = ->
+  $('body').backstretch('newyork.jpg')
+  
+  window.onload = ->
+    console.log 'load!'
+    setTimeout ->
+      $('#overlay').animate
+        opacity: 0
+        'z-index': -1
+    , 500
