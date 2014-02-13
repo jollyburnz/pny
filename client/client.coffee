@@ -23,7 +23,7 @@ Template.admin.rendered = ->
       console.log date
       Session.set 'date', Date.parse(date)
 
-  $("textarea").jqte()
+  $("#desc").cleditor({ width:500, height:250, controls: "" })[0].focus()
 
   window.onload = ->
     console.log 'load!'
@@ -331,7 +331,7 @@ Template.pastEventItem.rendered = ->
 
 Template.contactus.rendered = ->
   $('body').backstretch('newyork.jpg')
-  
+
   window.onload = ->
     console.log 'load!'
     setTimeout ->
