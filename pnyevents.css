@@ -23,9 +23,13 @@ p{
   color: #fff;
 }
 
-header, #content, body, #event1{
+header, #content, body, #event1, #contactus{
   //background: #000 !important;
   background: url(twinkle_twinkle.png) !important;
+}
+
+#event1, #contactus{
+  min-height: 500px;
 }
 
 .box{
@@ -55,10 +59,6 @@ input:focus{
 
 .xdsoft_datetimepicker *{
   color: #000;
-}
-
-#event1{
-  min-height: 500px;
 }
 
 .jqte_Content{
