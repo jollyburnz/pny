@@ -11,6 +11,7 @@ Meteor.startup ->
       Session.set 'facebook', aaa.data
 
     Session.set('done', false)
+    Session.set 'choose', 'New York' #default is New York
 
 Template.admin.rendered = ->
   Session.set 'city', 'New York'
@@ -285,7 +286,6 @@ Template.events1.rendered = ->
   window.next_sunday = moment().weekday(14)._d
   window.tomorrow = moment().add('d', 1)._d
 
-  Session.set 'choose', 'New York' #default is New York
 
   window.onload = ->
     Session.set 'evt', 'today'
