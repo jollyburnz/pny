@@ -11,7 +11,14 @@ Meteor.startup ->
       Session.set 'facebook', aaa.data
 
     Session.set('done', false)
-    Session.set 'choose', 'New York' #default is New York
+
+  Session.set 'choose', 'New York' #default is New York
+  Session.set 'evt', 'today'
+  window.monday = moment().weekday(0)._d
+  window.sunday = moment().weekday(7)._d
+  window.next_monday = moment().weekday(7)._d
+  window.next_sunday = moment().weekday(14)._d
+  window.tomorrow = moment().add('d', 1)._d
 
 Template.admin.rendered = ->
   Session.set 'city', 'New York'
@@ -280,17 +287,8 @@ Template.events1.rendered = ->
   else if Session.equals 'choose', 'DC'
     $('body').backstretch('dc12.jpg')
 
-  window.monday = moment().weekday(0)._d
-  window.sunday = moment().weekday(7)._d
-  window.next_monday = moment().weekday(7)._d
-  window.next_sunday = moment().weekday(14)._d
-  window.tomorrow = moment().add('d', 1)._d
-
-
   window.onload = ->
-    Session.set 'evt', 'today'
     console.log 'load!'
-
 
     setTimeout ->
       $('#overlay').animate
