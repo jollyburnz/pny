@@ -253,7 +253,7 @@ Template.events1.allupcoming = ->
 
 Template.events1.rendered = ->
   $('.backstretch').show()
-  
+
   if Session.equals 'evt', 'past'
     console.log 'PAST'
     $("#past").addClass 'active'
@@ -285,9 +285,10 @@ Template.events1.rendered = ->
   window.next_sunday = moment().weekday(14)._d
   window.tomorrow = moment().add('d', 1)._d
 
+  Session.set 'choose', 'New York' #default is New York
+
   window.onload = ->
     Session.set 'evt', 'today'
-    Session.set 'choose', 'New York' #default is New York
     console.log 'load!'
 
 
@@ -334,6 +335,7 @@ Template.pastEventItem.rendered = ->
 
 
 Template.contactus.rendered = ->
+  $('.backstretch').show()
   $('body').backstretch('newyork.jpg')
 
   window.onload = ->
