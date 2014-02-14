@@ -135,6 +135,8 @@ Template.whatever.done = ->
   Session.equals 'done', true
 
 Template.whatever.rendered = ->
+  $('.backstretch').hide() #no backstretch
+
   window.onload = ->
     console.log 'load!'
     setTimeout ->
@@ -250,6 +252,8 @@ Template.events1.allupcoming = ->
 
 
 Template.events1.rendered = ->
+  $('.backstretch').show()
+  
   if Session.equals 'evt', 'past'
     console.log 'PAST'
     $("#past").addClass 'active'

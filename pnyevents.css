@@ -23,7 +23,7 @@ p{
   color: #fff;
 }
 
-header, #content, body, #event1, #contactus{
+header, #content, body, #event1, #contactus, .home{
   //background: #000 !important;
   background: url(twinkle_twinkle.png) !important;
 }
