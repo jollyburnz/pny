@@ -331,6 +331,9 @@ Template.pastEventItem.day = ->
 Template.pastEventItem.rendered = ->
   $(@.find('.front')).backstretch(@.data.url)
 
+Template.contactus.events
+  "click #send-email": (e, t) ->
+    console.log 'send email'
 
 Template.contactus.rendered = ->
   $('.backstretch').show()
