@@ -334,6 +334,8 @@ Template.pastEventItem.rendered = ->
 Template.contactus.events
   "click #send-email": (e, t) ->
     console.log 'send email'
+    console.log t.find('#email').value, 'email'
+    console.log t.find('#message').value, 'message'
 
 Template.contactus.rendered = ->
   $('.backstretch').show()

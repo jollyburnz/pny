@@ -57,6 +57,10 @@ input:focus{
   outline: none;
 }
 
+#send-email:focus{
+  outline: 0;
+}
+
 .xdsoft_datetimepicker *{
   color: #000;
 }
