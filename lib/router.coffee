@@ -2,7 +2,7 @@ Router.configure
   layoutTemplate: "layout"
 
 Router.map ->
-  @route "whatever",
+  @route "whatever2",
     path: "/"
 
   @route 'admin',

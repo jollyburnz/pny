@@ -216,6 +216,16 @@ Template.whatever.events
 
     Session.set 'done', true
 
+Template.whatever2.rendered = ->
+  $('.backstretch').hide() #no backstretch
+
+  window.onload = ->
+    console.log 'load!'
+    setTimeout ->
+      $('#overlay').animate
+        opacity: 0
+        'z-index': -1
+    , 500
 
 Template.events.rendered = ->
   window.onload = ->
