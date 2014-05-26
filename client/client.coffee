@@ -72,10 +72,10 @@ Template.admin.events
     
     Events.insert
       date: Session.get 'date'
-      location: Session.get 'city'
       venue: $('#venue').val()
       description: $('#desc').val()
       url: 'http://placekitten.com/g/200/400'
+      #location: Session.get 'city'
       #url: Session.get 'flyer'
 
   'change #choose-city': (e, t) ->
@@ -242,25 +242,29 @@ Template.events1.choose = ->
   Session.get 'choose'
 
 Template.events1.eventsofpast = ->
-  chosen = Session.get 'choose'
-  Events.find({location: chosen, date:{"$lte": monday}})
+  #chosen = Session.get 'choose'
+  #Events.find({location: chosen, date:{"$lte": monday}})
+  Events.find({date:{"$lte": monday}})
+
 
 Template.events1.eventsthisweek = ->
-  chosen = Session.get 'choose'
-  Events.find({location: chosen, date: {"$gte": monday, "$lte": sunday}})
+  #chosen = Session.get 'choose'
+  #Events.find({location: chosen, date: {"$gte": monday, "$lte": sunday}})
+  Events.find({date: {"$gte": monday, "$lte": sunday}})
 
 Template.events1.eventsnextweek = ->
-  chosen = Session.get 'choose'
-  Events.find({location: chosen, date: {"$gte": next_monday, "$lte": next_sunday}})
+  #chosen = Session.get 'choose'
+  #Events.find({location: chosen, date: {"$gte": next_monday, "$lte": next_sunday}})
+  Events.find({date: {"$gte": monday, "$lte": sunday}})
 
 Template.events1.allupcoming = ->
-  chosen = Session.get 'choose'
+  #chosen = Session.get 'choose'
   console.log tomorrow
-  Events.find({location: chosen, date: {"$gte": tomorrow}})
-
+  #Events.find({location: chosen, date: {"$gte": tomorrow}})
+  Events.find({date: {"$gte": tomorrow}})
 
 Template.events1.rendered = ->
-  $('.backstretch').show()
+  #$('.backstretch').show()
 
   if Session.equals 'evt', 'past'
     console.log 'PAST'
@@ -278,14 +282,14 @@ Template.events1.rendered = ->
     console.log 'UPCOMING'
     $("#upcomings").addClass 'active'
 
-  if Session.equals 'choose', 'New York'
-    $('body').backstretch('newyork.jpg')
+  # if Session.equals 'choose', 'New York'
+  #   $('body').backstretch('newyork.jpg')
 
-  else if Session.equals 'choose', 'Boston'
-    $('body').backstretch('boston.jpg')
+  # else if Session.equals 'choose', 'Boston'
+  #   $('body').backstretch('boston.jpg')
 
-  else if Session.equals 'choose', 'DC'
-    $('body').backstretch('dc12.jpg')
+  # else if Session.equals 'choose', 'DC'
+  #   $('body').backstretch('dc12.jpg')
 
   window.onload = ->
     console.log 'load!'

@@ -71,8 +71,8 @@ auto;color:white;text-align:center;font-size:5em;letter-spacing:0.1em;text-trans
 img{height:1.75em;float:left}.banner .navbar-inner
 .nav{margin:0;background-color:transparent;text-align:right;padding-top:1em}.banner .navbar-inner .nav
 li{float:none;display:inline}.banner .navbar-inner .nav li
-a{font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:normal;font-style:normal;padding:1.35em 1.25em 1.25em;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75em;line-height:1em;color:#404040;background:transparent;text-shadow:none}.banner .navbar-inner .nav li a
-.caret{margin-top:4px !important}.banner .navbar-inner .nav li a:hover{color:#bea573}.nav{}.nav
+a{font-family:"Brandon-alt","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:600;font-style:normal;padding:1.35em 1.25em 1.25em;text-transform:uppercase;letter-spacing:0.1em;font-size:0.75em;line-height:1em;color:#404040;background:transparent;text-shadow:none}.banner .navbar-inner .nav li a
+.caret{margin-top:4px !important}.banner .navbar-inner .nav li a:hover{color:#8f77a6}.nav{}.nav
 li{}.nav li
 a{}#content{margin-top:0;position:relative;z-index:10;background:white}.byline{color:#999}.entry-content{}.entry-content
 dd{margin-left:0;font-size:0.9em;color:#787878;margin-bottom:1.5em}.entry-content
@@ -137,7 +137,7 @@ a{font-family:"icon";padding:1em}.footer
 .nav{list-style:none;padding:0;text-align:right;margin-top:0;background:transparent}.footer .nav
 li{display:inline;float:none}.footer .nav li
 a{padding:0.5em 1em}.footer .nav li a:hover{background:transparent}.footer
-a{color:#404040 !important}.footer a:hover{color:#bea573 !important}.first{margin-left:0 !important}.page-template-page-about-php .wrap .row-fluid ol, .page-template-page-about-php .wrap .row-fluid ul, .page ol, .page
+a{color:#404040 !important}.footer a:hover{color:#8f77a6 !important}.first{margin-left:0 !important}.page-template-page-about-php .wrap .row-fluid ol, .page-template-page-about-php .wrap .row-fluid ul, .page ol, .page
 ul{margin-left:1.5em}.page-template-page-about-php .wrap .row-fluid ol li, .page-template-page-about-php .wrap .row-fluid ul li, .page ol li, .page ul
 li{margin-bottom:0.5em}.page-template-page-about-php .wrap .row-fluid ol li, .page ol
 li{list-style:decimal}.page-template-page-about-php .wrap .row-fluid ul li, .page ul

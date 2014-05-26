@@ -95,3 +95,7 @@ input:focus{
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.42);
   -webkit-font-smoothing: antialiased;
 }
+
+#menu-primary-navigation li a.active{
+  color: #8f77a6;
+}
