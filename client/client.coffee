@@ -268,6 +268,7 @@ Template.events1.allupcoming = ->
 
 Template.events1.rendered = ->
   #$('.backstretch').show()
+  $('.backstretch').hide()
 
   if Session.equals 'evt', 'past'
     console.log 'PAST'
