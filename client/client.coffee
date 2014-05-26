@@ -67,16 +67,19 @@ Template.admin.flyer = ->
 
 Template.admin.events
   'click #add-event': (e, t) ->
-    console.log (Session.get 'date')
     venue1 = $('#venue').val()
     
     Events.insert
       date: Session.get 'date'
       venue: $('#venue').val()
       description: $('#desc').val()
-      url: 'http://placekitten.com/g/200/400'
+      url: Session.get 'flyer'
+      #url: 'http://placekitten.com/g/200/400'
       #location: Session.get 'city'
-      #url: Session.get 'flyer'
+
+  'change #flyer': (e, t) ->
+    console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'flyer'
+    Session.set 'flyer', e.files[0].url
 
   'change #choose-city': (e, t) ->
     city = $('#choose-city').val()
@@ -255,7 +258,7 @@ Template.events1.eventsthisweek = ->
 Template.events1.eventsnextweek = ->
   #chosen = Session.get 'choose'
   #Events.find({location: chosen, date: {"$gte": next_monday, "$lte": next_sunday}})
-  Events.find({date: {"$gte": monday, "$lte": sunday}})
+  Events.find({date: {"$gte": next_monday, "$lte": next_sunday}})
 
 Template.events1.allupcoming = ->
   #chosen = Session.get 'choose'
