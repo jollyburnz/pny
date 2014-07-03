@@ -265,7 +265,9 @@ Template.events1.allupcoming = ->
   #chosen = Session.get 'choose'
   console.log tomorrow
   #Events.find({location: chosen, date: {"$gte": tomorrow}})
-  Events.find({date: {"$gte": tomorrow}})
+  asdf = Events.find({date: {"$gte": tomorrow}})
+  console.log asdf, 'upcoming'
+  asdf
 
 Template.events1.rendered = ->
   #$('.backstretch').show()

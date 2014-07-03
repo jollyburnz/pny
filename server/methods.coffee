@@ -4,7 +4,7 @@ Meteor.startup ->
   Meteor.methods
     getfbphotos: ->
       @unblock()
-      yo = HTTP.call "GET", "http://graph.facebook.com/466221350147897/photos"
+      yo = HTTP.call "GET", "http://graph.facebook.com/316854181751282/photos"
       #console.log yo, 'yooo'
       yo
 
@@ -15,4 +15,4 @@ Meteor.startup ->
         to: email
         from: "newsletter@pnyevents.com"
         subject: "[PNY Events] Thank you for joining our newsletter!"
-        text: "We will share with you some news about us in a near future. See you soon! Party on!"
+        text: "We'll let keep you posted with the hottest parties in NYC."
