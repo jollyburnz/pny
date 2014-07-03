@@ -152,8 +152,9 @@ Template.whatever.rendered = ->
   window.onload = ->
     console.log 'load!'
     setTimeout ->
+      console.log 'set timeout!'
       $('#overlay').animate
-        opacity: 0
+        'opacity': 0
         'z-index': -1
     , 500
 
