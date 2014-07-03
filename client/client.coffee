@@ -67,6 +67,7 @@ Template.admin.flyer = ->
 
 Template.admin.events
   'click #add-event': (e, t) ->
+    console.log 'add events'
     venue1 = $('#venue').val()
     
     Events.insert
