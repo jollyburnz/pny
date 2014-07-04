@@ -33,13 +33,21 @@ Template.admin.rendered = ->
 
   $("#desc").cleditor({ width:500, height:250, controls: "" })[0].focus()
 
-  window.onload = ->
+  $(document).ready ->
     console.log 'load!'
     setTimeout ->
       $('#overlay').animate
         opacity: 0
         'z-index': -1
     , 500
+
+  # window.onload = ->
+  #   console.log 'load!'
+  #   setTimeout ->
+  #     $('#overlay').animate
+  #       opacity: 0
+  #       'z-index': -1
+  #   , 500
 
   console.log 'ADMIN POWER!'
   filepicker.constructWidget(document.getElementById('photo1'))
@@ -77,6 +85,9 @@ Template.admin.events
       url: Session.get 'flyer'
       #url: 'http://placekitten.com/g/200/400'
       #location: Session.get 'city'
+    setTimeout ->
+      $('#myModal').modal('hide')
+    , 500
 
   'change #flyer': (e, t) ->
     console.log e.files[0], e.files[0].data.filename, e.files[0].url, 'flyer'
