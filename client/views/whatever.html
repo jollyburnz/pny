@@ -81,35 +81,12 @@
         
           <div id="main">
             <div class="clearfix row-fluid">
-              <div class="span3 first">
-                <br/>
-                <img src='newsletter.png'/>
-              </div>
-
-              <div class="span8 last">
-                {{#if done}}
-                <br/><br/>
-                <h2>Email sent!<br/>You are now subscribed to the newsletter!</h2>
-
-                {{else}}
-
-                <h2>Join Newsletter</h2>
-                <p>Sign up for PNY Events Newletters for the latest updates on PNY Events and parties in New York City!</p>
-                <br>
-                <div class='row'>
-                  <div class="col-xs-11">
-                    <div class="input-group input-group-lg">
-                      <input id="email" type="email" placeholder="Enter email address" class="form-control">
-                      <span class="input-group-btn">
-                        <button id='submit' class="btn btn-custom" type="submit">Subscribe</button>
-                      </span>
-                    </div><!-- /input-group -->
-                    <br/><br/>
-                  </div>
-                </div>
-                
-                {{/if}}
-
+              <div class='span12'>
+                <h2>About PNY</h2>
+                <p>PNY Events is a leading full-service nightlife entertainment provider offering services at some of New York’s hottest venues. Our services range from personal bottle service, charity events to college alumni parties for thousands of people.  Our job allows you to enjoy your night while we take care of all aspects of the party experience. Our team is responsible for location scouting, DJ booking, event coordination and any possible task you may require.</p>
+                <p>PNY Events also provides party consulting services and is available for hire on retainer.</p>
+                <p>For bookings or general information, please contact us at <a href="mailto:pnyevents@gmail.com">pnyevents@gmail.com</a></p>
+                <br/><br/><br/>
               </div>
 
             </div>
@@ -147,9 +124,10 @@
     <div class="fullwidthimage" style="background-image: url({{photo2.url}}) !important;">
        <div class="title">
           <div>
-             <h1>
+              <!-- <h1>
                 {{title2.title}}
-              </h1>
+              </h1> -->
+              <a id='event-button' href="events">Events</a>
           </div>
        </div>
     </div>
@@ -179,12 +157,35 @@
 
     <div class="container-fluid">
       <div class="wrap row-fluid homeNewsboxes clearfix">
-        <div class='span12'>
-          <h2>About PNY</h2>
-          <p>PNY Events is a leading full-service nightlife entertainment provider offering services at some of New York’s hottest venues. Our services range from personal bottle service, charity events to college alumni parties for thousands of people.  Our job allows you to enjoy your night while we take care of all aspects of the party experience. Our team is responsible for location scouting, DJ booking, event coordination and any possible task you may require.</p>
-          <p>PNY Events also provides party consulting services and is available for hire on retainer.</p>
-          <p>For bookings or general information, please contact us at <a href="mailto:pnyevents@gmail.com">pnyevents@gmail.com</a></p>
-          <br/><br/><br/><br/><br/><br/><br/>
+        <div class="span3 first">
+          <br/>
+          <img src='newsletter.png'/>
+        </div>
+
+        <div class="span8 last">
+          {{#if done}}
+          <br/><br/>
+          <h2>Email sent!<br/>You are now subscribed to the newsletter!</h2>
+
+          {{else}}
+
+          <h2>Join Newsletter</h2>
+          <p>Sign up for PNY Events Newletters for the latest updates on PNY Events and parties in New York City!</p>
+          <br>
+          <div class='row'>
+            <div class="col-xs-11">
+              <div class="input-group input-group-lg">
+                <input id="email" type="email" placeholder="Enter email address" class="form-control">
+                <span class="input-group-btn">
+                  <button id='submit' class="btn btn-custom" type="submit">Subscribe</button>
+                </span>
+              </div><!-- /input-group -->
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          {{/if}}
+
         </div>
 
         <!-- <div class="fourcol span4 post-teaser first">

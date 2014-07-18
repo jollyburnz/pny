@@ -99,3 +99,28 @@ input:focus{
 #menu-primary-navigation li a.active{
   color: #fff;
 }
+
+.title{
+  text-align: center;
+}
+
+a#event-button{
+  border: 3px solid #fff !important;
+  padding: 1em 1.75em;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #fff;
+  -webkit-transition: background-color .1s 0s ease-in-out, color .1s 0s ease-in-out;
+  -moz-transition: background-color .1s 0s ease-in-out, color .1s 0s ease-in-out;
+  -ms-transition: background-color .1s 0s ease-in-out, color .1s 0s ease-in-out;
+  -o-transition: background-color .1s 0s ease-in-out, color .1s 0s ease-in-out;
+  transition: background-color .1s 0s ease-in-out, color .1s 0s ease-in-out;
+}
+
+a#event-button:hover{
+  color: #000;
+  background: #fff;
